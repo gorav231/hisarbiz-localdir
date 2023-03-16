@@ -1,12 +1,129 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        navyblue: {
+          950: '#002067;'
+        },
+        lightblue: {
+          10: "#0077b6"
+        },
+        light1: {
+          11: "hsla(0,0%,100%,.1)"
+        },
+        gray: {
+          10: "#676767"
+        },
+        light: {
+          12: "#aaa"
+        },
+        black1: {
+          1: '#0d0d0d'
+        },
+        lightb: {
+          1: "#418fc6 "
+        },
+        lightg: {
+          1: "#666666"
+        },
+        footer2: {
+          1: "#0077b6"
+        },
+        hoverColor: "#1054a5"
+      },
+      screens: {
+        'xxs': '200px',
+        'xs': '540px'
+      },
+      backgroundImage: {
+        // 'articalHero': 'url("/images/bg/blog-bg-1.jpg")',
+        // 'userBanner': 'url("/images/user-profile/user.svg")',
+        'homeBanner': 'url("/images/home/homebanner.svg")',
+        // 'contactBanner': 'url("/images/contact/slide-banner.png")',
+        // 'reviewBanner': 'url("/images/review/review-banner.svg")',
+        // 'chooseBanner': 'url("/images/review/choose-banner.svg")',
+        // 'homeHeroBanner1': 'url("/images/hero/hero-one-bg-2.svg")',
+        // 'getQuotes': 'url("/images/getquote/get-quote-1.png")',
+        // 'mobileBanner': 'url("/images/getquote/get-quotes-bg.jpg")',
+        // 'privacyBanner': 'url("/images/term&condition/policy.svg")',
+        // 'freeBanner': 'url("/images/hero/34.png)'
+      },
+      fontFamily: {
+        'Quicksand': ['sans-serif', 'Quicksand'],
+        'Mulish': ['Mulish', 'sans-serif'],
+        'Josefin': ['Josefin Sans', 'sans-serif'],
+      },
+      scale: {
+        '7': ".7"
+      },
+      keyframes: {
+        'loadershake':{
+          '0%': {
+            transform: 'translateY(5x)'
+          },
+          '50%': {
+            transform: 'translateY(10px)'
+          },
+          '100%': {
+            transform: 'translateY(5px)'
+          },
+        },
+        // 'fade-in-down': {
+        //   '0%': {
+        //     opacity: '0',
+        //     transform: 'translateY(-10px)'
+        //   },
+        //   '100%': {
+        //     opacity: '1',
+        //     transform: 'translateY(0)'
+        //   },
+        // },
+        // 'fade-out-down': {
+        //   'from': {
+        //     opacity: '1',
+        //     transform: 'translateY(0px)'
+        //   },
+        //   'to': {
+        //     opacity: '0',
+        //     transform: 'translateY(10px)'
+        //   },
+        // },
+        // 'fade-in-up': {
+        //   '0%': {
+        //     opacity: '0',
+        //     transform: 'translateY(10px)'
+        //   },
+        //   '100%': {
+        //     opacity: '1',
+        //     transform: 'translateY(0)'
+        //   },
+        // },
+        // 'fade-out-up': {
+        //   'from': {
+        //     opacity: '1',
+        //     transform: 'translateY(0px)'
+        //   },
+        //   'to': {
+        //     opacity: '0',
+        //     transform: 'translateY(10px)'
+        //   },
+        // }
+      },
+      // animation: {
+      //   'loadershake': 'loadershake infinite 0.8s linear',
+      //   'fade-in-down': 'fade-in-down 0.5s ease-out',
+      //   'fade-out-down': 'fade-out-down 0.5s ease-out',
+      //   'fade-in-up': 'fade-in-up 0.5s ease-out',
+      //   'fade-out-up': 'fade-out-up 0.5s ease-out'
+      // }
+    },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+  plugins: [
+    // require('tailwind-scrollbar')
+  ],
 }

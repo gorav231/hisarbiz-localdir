@@ -1,3 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&family=Poppins:wght@400;500;700;800&family=Quicksand:wght@400;500;600;700&family=Rubik&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  /* ---------------- common button style --------------- */
+.common_btn {
+    padding:  0.625rem 1.75rem; 
+    border-radius: 5px;
+    color: #fff;
+    background: #0077b6; 
+    letter-spacing: 0.025em;
+    font-weight: 600;
+    font-size: 0.975rem;
+    line-height: 1.25rem;
+    transition: ease-in-out 0.7s;
+  }
+  
+  .common_btn:hover {
+    box-shadow: inset 0 300px 0 0 #3596da;
+    color: white;
+    outline: none;
+  }
+  
+  body {
+    font-family: 'Mulish', sans-serif;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Quicksand', sans-serif !important;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: 700;
+  }

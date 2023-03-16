@@ -1,4 +1,7 @@
-import Head from 'next/head'
+import Head from "next/head";
+import Layout from "@/src/layouts/Layout";
+import HomeBanner from "@/src/components/home/HomeBanner";
+import Index from "@/src/components/map";
 
 export default function Home() {
   return (
@@ -9,7 +12,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-     <div className='text-red-500'>hisar directory</div>
+      <Layout>
+        <HomeBanner />
+        <Index />
+      </Layout>
     </>
-  )
+  );
 }
