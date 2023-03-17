@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -67,7 +67,6 @@ const HomeBanner = () => {
       } catch (error) {
         console.log(error);
       }
-       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   
     const categoryBy = searchData?.filter((n) =>
@@ -111,6 +110,8 @@ const HomeBanner = () => {
   const handelSerch = (e) => {
     if (searchTerm || searchByLocation) {
       router.push(`/search/listing`);
+    }else if (searchTerm || searchByLocation == ""){
+      alert("Enter your business first!")
     }
     localStorage.setItem("searchRes", JSON.stringify(filterdData));
   
@@ -120,121 +121,117 @@ const HomeBanner = () => {
   
   useControlPopOutside(setIsVisible, addressref);
   return (
-        <div className="block">
-          <div className="before:bg-homeBanner before:block before:left-0 before:-z-20 before:bg-cover before:top-[-40px] before:absolute before:h-[110%] before:w-full md:pt-8 xxs:pt-3 md:pb-24 xxs:pb-[70px] relative ">
-            <div className="mx-auto xxs:max-w-xl  md:max-w-5xl xl:max-w-6xl lg:px-0 md:px-10">
-              <div className="grid grid-cols-3 gap-4 relative">
-                <div className="lg:col-span-2 xxs:col-span-3">
-                  <div className="xxs:mx-1 md:pt-10 xxs:pt-2">
-                    <div className="flex md:flex-row justify-between xxs:flex-row items-center">
-                      <h1 className="lg:text-4xl md:text-[25px] xxs:text-[15px] leading-7 text-black1-1 font-bold font-roboto xxs:pb-5 xxs:px-2 xxs:text-left xs:text-left">
-                        One-stop solution for every business & household needs
-                      </h1>
-                      <div className="md:mx-auto xxs:mx-0 xxs:pl-0 xxs:mb-4 md:hidden xxs:mr-5 xxs:block">
-                        <Image
-                          src="/images/pre-loader/home-loader.gif"
-                          width={150}
-                          height={150}
-                          className="h-12 w-12"
-                          alt="loader"
-                        ></Image>
-                      </div>
-                    </div>
-                    <div className="flex md:flex-row xxs:flex-row items-center ">
-                      <p className="font-medium ml-1 xxs:pt-5 pb-5 leading-6 font-lato text-lightg-1 text-base xxs:text-center xs:text-left md:block xxs:hidden">
-                        Find local businesses and professionals from the authentic
-                        source.
-                      </p>
-                      <div className="md:ml-[132px] xxs:mx-0 md:pl-16 xxs:pl-0 md:block xxs:hidden">
-                        <Image
-                          src="/images/pre-loader/home-loader.gif"
-                          width={150}
-                          height={150}
-                          className="h-12 w-12"
-                          alt="loader"
-                        ></Image>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white md:p-2 xxs:px-2.5 xxs:py-4 xxs:mx-1.5 rounded-lg xxs:-mt-4">
-                    <form onSubmit={(e) => e.preventDefault()}>
-                      <div className="md:flex gap-2">
-                        <div className="md:w-11/12 w-full grid gap-2 grid-cols-1 md:grid-cols-1">
-                          <div className="bg-[#f7f7f7] rounded-lg relative">
-                            <div className="">
-                              <div>
-                                <input
-                                  type="text"
-                                  value={val === "" ? searchTerm : val }
-                                  onChange={(e) => {
-                                    setSearchTerm(e.target.value);
-                                  }}
-                                  className="w-11/12 text-sm bg-inherit h-12  px-4  outline-none "
-                                  placeholder="Bussiness type or name"
-                                  name="search"
-                                  autoComplete="off"
-                                  required=""
-                                  onClick={() => {
-                                    setIsVisible(!isVisible);
-                                    setVal("");
-                                  }}
-                                />
-    
-                                {isVisible && (
-                                  <div>
-                                    {suggestionInfo?.length > 0 &&
-                                      searchTerm != "" && (
-                                        <SuggetionNameCategory
-                                          rref={addressref}
-                                          addressData={suggestionInfo}
-                                          setSData={setCData}
-                                          setIsVisible={setIsVisible}
-                                          setSQuery={setSearchTerm}
-                                          defaultSpanStyle={defaultSpanStyle}
-                                          defaultSuggestionBoxStyle={
-                                            defaultSuggestionBoxStyle
-                                          }
-                                          val={val}
-                                          setVal={setVal}
-                                        />
-                                      )}
-                                  </div>
-                                )}
-                              </div>
-                              <span className="text-[20px] w-1/12 text-gray-400 absolute top-3.5 right-0">
-                                <TfiInkPen />
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="md:w-1/12 w-full mt-4 md:mt-0">
-                          <div className="flex items-center  justify-center border border-gray-300 rounded-md text-2xl w-full">
-                            <button
-                              title="Search-Now"
-                              onClick={() => handelSerch()}
-                              className="p-2.5"
-                            >
-                              <RiSearchLine />
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-                <div className="md:col-span-1 xxs:col-span-3 animate-fade-in-down">
-                  <Image
-                    src="/images/home/herobanner-side.svg"
-                    alt="hero-one-bg"
-                    className="object-cover bg-contain lg:block xxs:hidden"
-                    width={1000}
-                    height={1000}
-                    href="/"
-                  />
-                </div>
+        <div className="grid grid-cols-6">
+          <div className="col-span-6 relative -z-10 -top-10">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111497.06572257436!2d75.6854991157293!3d29.156322701334577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391232d8011d0c37%3A0x1d3f0df105af1178!2sHisar%2C%20Haryana!5e0!3m2!1sen!2sin!4v1678954693348!5m2!1sen!2sin"
+            referrerpolicy="no-referrer-when-downgrade"
+            className="w-full"
+            height="340"
+            style={{ border: "0" }}
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+          </div>
+          <div className="2xl:w-2/6 xl:w-[42%] lg:w-4/6 mx-4 my-4  bg-[rgb(0,0,0,0.7)] rounded-md absolute">
+          <div className="xxs:mx-1 md:pt-8 xxs:pt-2 md:m-2 rounded-md pt-2 pb-7">
+           
+            <div className="flex md:flex-row justify-between xxs:flex-row items-center">
+              <h1 className="lg:text-3xl md:text-[25px] xxs:text-[15px] leading-7 text-white font-bold font-roboto xxs:pb-5 md:pb-5 xxs:px-2 xxs:text-left md:text-center">
+                One-stop solution for every business & household needs
+              </h1>
+              <div className="md:mx-auto xxs:mx-0 xxs:pl-0 xxs:mb-4 md:hidden xxs:mr-5 xxs:block">
+                <Image
+                  src="/images/pre-loader/home-loader.gif"
+                  width={150}
+                  height={150}
+                  className="h-12 w-12"
+                  alt="loader"
+                ></Image>
               </div>
             </div>
+            <div className="flex md:flex-row xxs:flex-row items-center justify-center">
+              <p className="font-medium ml-1 leading-6 pb-2 font-lato text-white text-base text-[15.5px] xxs:text-center md:text-center md:block xxs:hidden">
+                Find local businesses and professionals from the authentic source.
+              </p>
+              <div className=" xxs:mx-0 xxs:pl-0  md:block xxs:hidden">
+                <Image
+                  src="/images/pre-loader/home-loader.gif"
+                  width={150}
+                  height={150}
+                  className="h-12 w-12"
+                  alt="loader"
+                ></Image>
+              </div>
+            </div>
+
+            <div className="md:p-2 xxs:px-2.5 xxs:py-4 xxs:mx-1.5 rounded-lg xxs:-mt-4 2xl:mx-8 md:mx-0">
+              <form onSubmit={(e) => e.preventDefault()}>
+                <div className="md:flex gap-2">
+                  <div className="md:w-11/12 w-full grid gap-2 grid-cols-1 md:grid-cols-1">
+                    <div className="bg-[#f7f7f7] rounded-lg relative">
+                      <div className="">
+                        <div>
+                          <input
+                            type="text"
+                            value={val === "" ? searchTerm : val}
+                            onChange={(e) => {
+                              setSearchTerm(e.target.value);
+                            }}
+                            className="w-11/12 text-sm bg-inherit h-12  px-4  outline-none "
+                            placeholder="Bussiness type or name"
+                            name="search"
+                            autoComplete="off"
+                            required=""
+                            onClick={() => {
+                              setIsVisible(!isVisible);
+                              setVal("");
+                            }}
+                          />
+
+                          {isVisible && (
+                            <div>
+                              {suggestionInfo?.length > 0 &&
+                                searchTerm != "" && (
+                                  <SuggetionNameCategory
+                                    rref={addressref}
+                                    addressData={suggestionInfo}
+                                    setSData={setCData}
+                                    setIsVisible={setIsVisible}
+                                    setSQuery={setSearchTerm}
+                                    defaultSpanStyle={defaultSpanStyle}
+                                    defaultSuggestionBoxStyle={
+                                      defaultSuggestionBoxStyle
+                                    }
+                                    val={val}
+                                    setVal={setVal}
+                                  />
+                                )}
+                            </div>
+                          )}
+                        </div>
+                        <span className="text-[20px] w-1/12 text-gray-400 absolute top-3.5 right-0">
+                          <TfiInkPen />
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="md:w-1/12 w-full mt-4 md:mt-0">
+                    <div className="flex items-center  justify-center border border-gray-300 rounded-md text-2xl w-full">
+                      <button
+                        title="Search-Now"
+                        onClick={() => handelSerch()}
+                        className="p-2.5"
+                      >
+                        <RiSearchLine className="text-white"/>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
+        </div>
           <Link href="/get-quotes">
             <div className="z-50 absolute md:block xxs:hidden">
               <button className="fixed right-5 bottom-2 common_btn">

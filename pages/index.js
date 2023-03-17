@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout from "@/src/layouts/Layout";
 import HomeBanner from "@/src/components/home/HomeBanner";
-import Index from "@/src/components/map";
+import Index from "@/src/components/category/Index";
 
 export default function Home() {
   return (

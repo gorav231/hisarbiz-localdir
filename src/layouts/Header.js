@@ -99,10 +99,10 @@ const Header = () => {
   return (
     <div
       className={ scrolled ? "sticky top-0 z-10 transition delay-1000 duration-300 ease-in" : "navbar"} >
-      <div className="bg-[#F7F7F7] px-3 lg:mx-4 xxs:mx-0 lg:px-3 xxs:p-0 md:block xxs:hidden">
+      <div className="bg-[#F7F7F7] xl:px-3 lg:px-1.5 md:px-3 xl:mx-4 lg:mx-2 xxs:mx-0 xxs:p-0 md:block xxs:hidden">
         {/* //** ----------- menu Items for large device----------- */}
 
-        <div className="md:w-[95%] sm:w-[75%] xs:w-[80%] xxs:w-[90%] py-1 mx-auto z-10">
+        <div className="xl:w-[95%] lg:w-[100%] md:w-[95%] sm:w-[75%] xs:w-[80%] xxs:w-[90%] py-1 mx-auto z-10">
           <div className="relative flex items-center justify-between ">
             <div className="flex items-center justify-between">
               <Link href="/" aria-label="Company" title="Company"
@@ -147,7 +147,7 @@ const Header = () => {
               <div
                 className={`absolute z-40 p-2 -top-2 md:w-[50%] h-screen w-[80%] ease-linear duration-700  bg-white ${
                   isMenuOpen
-                    ? "left-[-12.5%] sm:-left-24 md:-left-6"
+                    ? "left-[-12.5%] sm:-left-24 md:-left-9"
                     : "left-[-1000px]"
                 }`}
               >
