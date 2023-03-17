@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { DataContextCommon } from "../Context/DataContext";
+// import { DataContextCommon } from "../Context/DataContext";
 
 const SuggetionNameCategory = ({
   rref,
@@ -13,9 +13,9 @@ const SuggetionNameCategory = ({
   suggestionBoxStyle,
  
 }) => {
-  const {
-    searchVal, setSearchVal
-  } = useContext(DataContextCommon);
+  // const {
+  //   searchVal, setSearchVal
+  // } = useContext(DataContextCommon);
   return (
     <div
       ref={rref}
@@ -36,7 +36,7 @@ const SuggetionNameCategory = ({
                 setSData([]);
                 setIsVisible(false);
                 setSQuery(val);
-                setSearchVal(val)
+                // setSearchVal(val)
               }}
             >
               {val}

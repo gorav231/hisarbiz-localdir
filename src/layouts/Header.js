@@ -183,10 +183,10 @@ const Header = () => {
               <li>
                     <button
                       className="bg-[#75E3F1] border border-gray-300 relative p-3 rounded-lg hidden lg:block"
-                      onClick={handleClick} >
+                      onClick={handleClick}>
                       <RxPerson className="text-[#000] outline-none text-[20px]" />
                     </button>
-              </li> 
+              </li>
               {/* <li>
                 {!user ? (
                   <>
@@ -197,7 +197,7 @@ const Header = () => {
                       <RxPerson className="text-[#000] outline-none text-[20px]" />
                     </button>
                   </>
-                 ) : (
+                ) : (
                   <>
                     <button
                       className="bg-[#75E3F1] relative border border-gray-300 h-12 w-12 text-sm font-bold text-[1.2rem] rounded-lg hidden lg:block"
@@ -240,7 +240,7 @@ const Header = () => {
                       </button>
                     </div>
                   </>
-                )} 
+                )}
               </li> */}
               <li>
                 <Link
@@ -285,7 +285,7 @@ const Header = () => {
                   <nav>
                     <ul className="space-y-4 ml-5 sm:ml-5 xxs:ml-10 md:ml-5">
                       {menuItems}
-                      <li>
+                        <li>
                             <Link
                               href="/userLogin"
                               aria-label="Log in"
@@ -294,7 +294,7 @@ const Header = () => {
                             >
                               Log in
                             </Link>
-                      </li> 
+                      </li>
                       {/* <li>
                         {!user ? (
                           <>

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
-import { DataContextCommon } from "../Context/DataContext";
+// import { DataContextCommon } from "../Context/DataContext";
 import { TfiInkPen } from "react-icons/tfi";
 import useControlPopOutside from "../hooks/useControlPopOutside";
 import SuggetionNameCategory from "../shared/SuggetionNameCategory";
@@ -25,7 +25,7 @@ const HeaderSearch = ({ logo }) => {
   const [CData, setCData] = useState([]);
   const [SQuery, setSQuery] = useState("");
   const [SData, setSData] = useState([]);
-  const { searchVal, handelSerch } = useContext(DataContextCommon);
+
 
   const defaultSpanStyle = {
     left: "3%",
@@ -124,7 +124,7 @@ const HeaderSearch = ({ logo }) => {
   // ------for current location add code end--------
 
   const [searchValue, setSearchValue] = useState("");
-  const { currenLetitude, currentLongitude } = useContext(DataContextCommon);
+  // const { currenLetitude, currentLongitude } = useContext(DataContextCommon);
   const [isVisibleLocation, setIsVisibleLocation] = useState(false);
 
   const address = combainSearchData?.filter((n) =>
@@ -314,7 +314,7 @@ const HeaderSearch = ({ logo }) => {
                   )}  */}
                   <div className="relative">
                     <button
-                      onClick={() => handelSerch()}
+                    
                       className="mt-2 hover:text-white hover:bg-hoverColor inline-flex relative z-10 bg-lightblue-10 items-center
                          justify-center h-12 text-white text-sm font-bold leading-7 uppercase rounded-lg w-full"
                     >
