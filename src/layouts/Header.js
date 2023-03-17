@@ -9,7 +9,7 @@ import { useRef } from "react";
 import { HiLocationMarker } from "react-icons/hi";
 // import UserInfoPopup from "../components/common/UserInfoPopup";
 import { FaPowerOff, FaUsersCog, FaUserAlt } from "react-icons/fa";
-import { AuthContext } from "../Context/UserContext";
+// import { AuthContext } from "../Context/UserContext";
 // import Swal from "sweetalert2";
 // import Router from "next/router";
 
@@ -21,7 +21,7 @@ const Header = () => {
   const dropDownRef = useRef(null);
   const [dropdownOpen, setdropdownOpen] = useState(false);
 
-  const { user, logOut } = useContext(AuthContext);
+  // const { user, logOut } = useContext(AuthContext);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -181,6 +181,13 @@ const Header = () => {
                 <HeaderSearch />
               </li>
               <li>
+                    <button
+                      className="bg-[#75E3F1] border border-gray-300 relative p-3 rounded-lg hidden lg:block"
+                      onClick={handleClick} >
+                      <RxPerson className="text-[#000] outline-none text-[20px]" />
+                    </button>
+              </li> 
+              {/* <li>
                 {!user ? (
                   <>
                     <button
@@ -190,7 +197,7 @@ const Header = () => {
                       <RxPerson className="text-[#000] outline-none text-[20px]" />
                     </button>
                   </>
-                ) : (
+                 ) : (
                   <>
                     <button
                       className="bg-[#75E3F1] relative border border-gray-300 h-12 w-12 text-sm font-bold text-[1.2rem] rounded-lg hidden lg:block"
@@ -233,8 +240,8 @@ const Header = () => {
                       </button>
                     </div>
                   </>
-                )}
-              </li>
+                )} 
+              </li> */}
               <li>
                 <Link
                   href="/add-listing"
@@ -279,6 +286,16 @@ const Header = () => {
                     <ul className="space-y-4 ml-5 sm:ml-5 xxs:ml-10 md:ml-5">
                       {menuItems}
                       <li>
+                            <Link
+                              href="/userLogin"
+                              aria-label="Log in"
+                              title="Log in"
+                              className="font-medium tracking-wide  transition-colors duration-200 hover:text-[#29B5DA]"
+                            >
+                              Log in
+                            </Link>
+                      </li> 
+                      {/* <li>
                         {!user ? (
                           <>
                             <Link
@@ -297,7 +314,7 @@ const Header = () => {
                             </h1>
                           </>
                         )}
-                      </li>
+                      </li> */}
                       <li className="">
                         <Link
                           href="/add-listing"

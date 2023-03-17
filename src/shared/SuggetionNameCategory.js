@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { DataContextCommon } from "../Context/DataContext";
 
 const SuggetionNameCategory = ({
