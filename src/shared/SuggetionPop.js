@@ -1,5 +1,5 @@
 import { useContext } from "react";
-// import { DataContextCommon } from "../Context/DataContext";
+
 
 const SuggetionPop = ({
   rref,
@@ -12,12 +12,9 @@ const SuggetionPop = ({
   defaultSuggestionBoxStyle,
   suggestionBoxStyle,
 }) => {
-  // const { setSearchByLocation } = useContext(
-  //   DataContextCommon
-  // );
 
   const setLocation = (e) => {
-    // setSearchByLocation(e);
+    
   };
 
   return (

@@ -1,13 +1,12 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
-// import { DataContextCommon } from "../Context/DataContext";
 import { TfiInkPen } from "react-icons/tfi";
 import useControlPopOutside from "../hooks/useControlPopOutside";
 import SuggetionNameCategory from "../shared/SuggetionNameCategory";
 import { supabase } from "@/supabase";
 import UsecontrolPopWithEsc from "../hooks/useControlPopWithEsc";
-import axios from "axios";
-const API_KEY = "AIzaSyDzLxooRzXh1axdLrfQLUFHHQ98gQz3zS0";
+import { TbSearch } from "react-icons/tb";
+
 
 /**
  * File: src/layouts/HeaderSearch.js
@@ -21,13 +20,9 @@ const HeaderSearch = ({ logo }) => {
   const router = useRouter();
   let catoRef = useRef(null);
   const [showFilter, setshowFilter] = useState(false);
-  const [CQuery, setCQuery] = useState("");
   const [CData, setCData] = useState([]);
-  const [SQuery, setSQuery] = useState("");
-  const [SData, setSData] = useState([]);
 
-
-  const defaultSpanStyle = {
+ const defaultSpanStyle = {
     left: "3%",
     top: "0%",
     backgroundColor: "#fff",
@@ -105,9 +100,18 @@ const HeaderSearch = ({ logo }) => {
   let addressref = useRef(null);
   const [val, setVal] = useState("");
 
-  const handleShowFilter = () => {
-    setshowFilter(true);
+  const handelSerch = (e) => {
+    if (searchTerm || searchByLocation) {
+      router.push(`/search/listing`);
+    }else if (searchTerm || searchByLocation == ""){
+      alert("Enter your business first!")
+    }
+    localStorage.setItem("searchRes", JSON.stringify(filterdData));
+  
+    setSearchTerm("");
+    setSearchByLocation("");
   };
+
   const suggestionInfos = suggestData.filter((text) =>
     text.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -122,35 +126,7 @@ const HeaderSearch = ({ logo }) => {
   });
 
   // ------for current location add code end--------
-
-  const [searchValue, setSearchValue] = useState("");
-  // const { currenLetitude, currentLongitude } = useContext(DataContextCommon);
   const [isVisibleLocation, setIsVisibleLocation] = useState(false);
-
-  const address = combainSearchData?.filter((n) =>
-    n?.businessAddress.toLowerCase().includes(searchByLocation.toLowerCase())
-  );
-
-  const handleCurrentLocation = async () => {
-    const response = await axios.get(
-      "https://maps.googleapis.com/maps/api/geocode/json",
-      {
-        params: {
-          latlng: `${currenLetitude},${currentLongitude}`,
-          key: API_KEY,
-        },
-      }
-    );
-    if (response.data.status === "OK") {
-      const result = response.data.results;
-      const city = result[0].address_components.find((component) => {
-        return component.types.includes("locality");
-      }).long_name;
-      setSearchByLocation(city);
-    } else {
-      throw new Error(`Geocoding failed: ${response.data.status}`);
-    }
-  };
 
   useControlPopOutside(setIsVisible, addressref);
   UsecontrolPopWithEsc(setIsVisible);
@@ -191,22 +167,15 @@ const HeaderSearch = ({ logo }) => {
 
   return (
     <div>
-      <input
-        type="text"
-        onClick={handleShowFilter}
-        placeholder="Search..."
-        className="h-12 px-4 border border-gray-300 rounded-lg outline-none w-full"
-      />
-      {showFilter && (
         <div
           ref={filterRef}
-          className="absolute z-10 top-10 right-[14%] bg-white rounded-lg p-5 ml-[-150px] w-[35%]  -mt-10"
+          className="z-10 rounded-lg pt-2  w-full  "
         >
           <div>
             <div className="grid grid-cols-1 gap-4">
               <div className="md:col-span-6 xxs:col-span-12">
-                <div className="relative grid grid-cols-1 gap-2">
-                  <div className="bg-[#f7f7f7] rounded-lg mb-2">
+                <div className="relative flex items-center justify-between">
+                  <div className="bg-white rounded-lg mb-2 w-full mr-2">
                     <div>
                       <input
                         type="text"
@@ -243,82 +212,14 @@ const HeaderSearch = ({ logo }) => {
                         </div>
                       )}
                     </div>
-                    <span className="text-[20px] w-1/12 absolute text-gray-400 top-[15px] inset-y-0 right-0  flex">
+                    <span className="text-[20px] w-1/12 absolute text-gray-400 top-[15px] inset-y-0 right-5  flex">
                       <TfiInkPen />
                     </span>
                   </div>
-                  {/* <div className="relative">
-                    <div className="bg-[#f7f7f7] rounded-lg ">
-                      <div>
-                        <div className="relative">
-                          <input
-                            type="text"
-                            className="mb-0 bg-inherit  h-12 text-sm w-11/12 px-4 outline-none"
-                            value={searchByLocation}
-                            autoComplete="off"
-                            ref={addressref}
-                            onClick={() =>
-                              setIsVisibleLocation(!isVisibleLocation)
-                            }
-                            onChange={(e) => setSearchByLocation(e.target.value)}
-                            placeholder={"Suburb or Postcode"}
-                            addressRef={addressref}
-                            name="location"
-                            required=""
-                          />
-                        </div>
-
-                        {isVisibleLocation && (
-                          <>
-                            {address?.length > 0 && searchByLocation != "" && (
-                              <div>  
-                                <SuggetionPop
-                                  rref={addressref}
-                                  SQuery={searchByLocation}
-                                  setSQuery={setSearchByLocation}
-                                  SData={SData}
-                                  addressData={address}
-                                  setSData={setSData}
-                                  setIsVisible={setIsVisibleLocation}
-                                  defaultSpanStyle={defaultSpanStyle}
-                                  defaultSuggestionBoxStyle={ defaultSuggestionBoxStyle}
-                                />
-                              </div>
-                            )}
-                          </>
-                        )}
-                      </div>
-
-                      <span className="text-[20px] w-1/12 absolute text-gray-400  top-[12px] right-0">
-                        <SlLocationPin />
-                      </span>
-                    </div>
-                  </div>
-                  {isVisibleLocation && (
-                    <div>
-                      {searchByLocation.length === 0 && (
-                        <div
-                          className="mt-2 rounded-md w-8/12 bg-white border border-gray-300  shadow-xl"
-                          ref={addressref}
-                        >
-                          <button
-                            className=" py-2 mb-2 rounded-lg text-bold w-full text-gray-500 flex items-center justify-center gap-2"
-                            onClick={() => handleCurrentLocation()}
-                          >
-                            <BiCurrentLocation className="text-2xl"></BiCurrentLocation>
-                            Select Current Location
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  )}  */}
-                  <div className="relative">
+                  <div >
                     <button
-                    
-                      className="mt-2 hover:text-white hover:bg-hoverColor inline-flex relative z-10 bg-lightblue-10 items-center
-                         justify-center h-12 text-white text-sm font-bold leading-7 uppercase rounded-lg w-full"
-                    >
-                      Search Now
+                      className="z-10 -mr-2" onClick={() => handelSerch()}> 
+                      <TbSearch className="h-5 w-5"/>
                     </button>
                   </div> 
                 </div>
@@ -326,7 +227,7 @@ const HeaderSearch = ({ logo }) => {
             </div>
           </div>
         </div>
-      )}
+  
     </div>
   );
 };
