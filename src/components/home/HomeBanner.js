@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -67,6 +67,7 @@ const HomeBanner = () => {
       } catch (error) {
         console.log(error);
       }
+       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   
     const categoryBy = searchData?.filter((n) =>

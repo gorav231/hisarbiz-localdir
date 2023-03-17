@@ -14,6 +14,7 @@ const UsecontrolPopWithEsc = (setRpop) => {
         return () => {
             document.removeEventListener("keydown", efunc);
           };
+           // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [efunc])
 return efunc;
   

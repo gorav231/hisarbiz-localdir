@@ -80,6 +80,7 @@ const HeaderSearch = ({ logo }) => {
     } catch (error) {
       console.log(error);
     }
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const categoryBy = searchData?.filter((n) =>
@@ -188,6 +189,7 @@ const HeaderSearch = ({ logo }) => {
       document.removeEventListener("mousedown", handler2);
       window.removeEventListener("keydown", close);
     };
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
