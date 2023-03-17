@@ -8,7 +8,8 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import app from "../../src/firebase/Firebase";
+import app from "../../src/firebase/firebase";
+import { useQuery } from "@tanstack/react-query";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);

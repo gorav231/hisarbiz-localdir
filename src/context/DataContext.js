@@ -1,6 +1,6 @@
+import React, { createContext, useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";
-import React, { createContext, useEffect, useState } from "react";
 import { supabase } from "supabase";
 export const DataContextCommon = createContext();
 
@@ -30,7 +30,6 @@ const DataContext = ({ children }) => {
         console.log(error);
       }
     );
-     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -53,7 +52,6 @@ const DataContext = ({ children }) => {
     } catch (error) {
       console.log(error);
     }
-     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const categoryBy = searchData?.filter((n) =>
@@ -82,7 +80,6 @@ const DataContext = ({ children }) => {
     if (searchTerm || searchByLocation) {
       router.push(`/search/listing`);
     }
-    console.log("search term+++++++++++++++++",searchTerm,searchByLocation)
     localStorage.setItem("searchRes", JSON.stringify(filterdData));
 
     setSearchTerm("");

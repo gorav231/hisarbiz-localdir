@@ -1,15 +1,12 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import { DataContextCommon } from "../Context/DataContext";
-import { SlLocationPin } from "react-icons/sl";
 import { TfiInkPen } from "react-icons/tfi";
 import useControlPopOutside from "../hooks/useControlPopOutside";
 import SuggetionNameCategory from "../shared/SuggetionNameCategory";
 import { supabase } from "@/supabase";
 import UsecontrolPopWithEsc from "../hooks/useControlPopWithEsc";
 import axios from "axios";
-import { BiCurrentLocation } from "react-icons/bi";
-import SuggetionPop from "../shared/SuggetionPop";
 const API_KEY = "AIzaSyDzLxooRzXh1axdLrfQLUFHHQ98gQz3zS0";
 
 /**
