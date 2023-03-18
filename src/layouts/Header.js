@@ -6,7 +6,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import Image from "next/image";
 import HeaderSearch from "./HeaderSearch";
 import { useRef } from "react";
-import { HiLocationMarker } from "react-icons/hi";
+import { HiOutlineLocationMarker } from "react-icons/hi";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -116,7 +116,7 @@ const Header = () => {
             </div>
             <ul className="md:flex items-center hidden space-x-5 lg:flex">
             <li className="flex items-center">
-              <HiLocationMarker className="h-5 w-5 mr-1"/>Hisar
+              <HiOutlineLocationMarker className="h-5 w-5 mr-1"/>Hisar
             </li>
               <li className="py-[10px] lg:w-[255px] xxs:w-[260px] outline-0 rounded-lg border-none hidden lg:block">
                 <HeaderSearch />
