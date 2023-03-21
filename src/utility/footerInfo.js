@@ -5,7 +5,6 @@ import {FaFacebookF,FaTwitter,FaPinterestP,FaInstagram} from "react-icons/fa"
  * Description: footer items.
  * Data: 16/03/2023
  * Author: Renu singroha
- * 
  */
 
 /** footer follow us icons part*/

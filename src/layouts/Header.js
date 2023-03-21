@@ -75,7 +75,7 @@ const Header = () => {
       </li>
       <li>
         <Link
-          href="/write-a-review"
+          href="/advertise"
           aria-label="Blog"
           title="Blog"
           className="font-medium tracking-wide  transition-colors duration-200 hover:text-[#29B5DA]"
