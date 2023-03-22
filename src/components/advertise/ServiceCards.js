@@ -1,10 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Keyboard, Pagination } from "swiper";
 import Image from "next/image";
+import SwiperCore, { Keyboard, Pagination, Navigation, A11y } from 'swiper';
+import 'swiper/swiper-bundle.css';
+SwiperCore.use([Navigation, Pagination, A11y]);
 import { SERVICE_CARD_INFO } from "@/src/utility/serviceCardInfo";
 
 const ServiceCards = () => {
@@ -39,30 +38,22 @@ const ServiceCards = () => {
       <div className="lg:w-5/6 md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto pt-14 pb-5">
         <h1 className="text-center md:text-4xl xxs:text-2xl py-1">We Provide The Best Service </h1>
         <h1 className="text-center md:text-4xl xxs:text-2xl py-1">With Our Tools </h1>
-        <p className="text-center text-[16px] font-[400] py-2">OUR SERVICES</p>
+        <p className="text-center text-[16px] font-[400] pt-5">OUR SERVICES</p>
         <Swiper
+        
           slidesPerView={4}
           spaceBetween={30}
           keyboard={{
             enabled: true,
           }}
+          
           pagination={{
             clickable: true,
           }}
           breakpoints={sliderSettings}
           modules={[Keyboard, Pagination]}
           className="my-5"
-          pagination_x={
-           { position: 'absolute',
-            bottom: '-20px',
-            left: 0,
-            right: 0,
-            flexDirection: 'row',
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: 'transparent'}
-          }
+          
         >
           <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 xxs:grid-cols-1 gap-8">
             {SERVICE_CARD_INFO.map((data) => {

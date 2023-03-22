@@ -12,8 +12,7 @@ import ServiceCards from "./ServiceCards";
 const Index = () => {
     return (
         <div>
-          <Layout>
-            <div className="lg:w-5/6 md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto">
+            <div className="md:px-0 xxs:w-full xxs:px-2 mx-auto">
               <Swiper
                 slidesPerView={1}
                 spaceBetween={30}
@@ -24,10 +23,10 @@ const Index = () => {
                   clickable: true,
                 }}
                 modules={[Keyboard, Pagination]}
-                className="mySwiper my-5"
+                className="mySwiper"
               >
                 <SwiperSlide>
-                  <div className="flex md:flex-row xxs:flex-col md:justify-between xxs:justify-center xxs:text-center md:text-left items-center">
+                  <div className="flex md:flex-row xxs:flex-col md:justify-between xxs:justify-center xxs:text-center md:text-left items-center py-5 2xl:px-48 xl:px-48 lg:px-28 md:px-14">
                     <div className="md:mr-24">
                       <h1 className="lg:text-4xl md:text-2xl xxs:text-xl pb-5">Grow Your <br/> <span className="leading-normal"> Online Business With Us</span> <br/> <span> & Make Success.</span></h1>
                       <p className="lg:text-[18px] md:text-[15px] xxs:text-[13px] leading-[27px] ">As a business owner, we let you take control. Simply log in to your business centre to update or personalise your listing, receive customer enquiries and respond to reviews anytime, anywhere.</p>
@@ -43,7 +42,7 @@ const Index = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="flex md:flex-row xxs:flex-col md:justify-between xxs:justify-center xxs:text-center md:text-left items-center">
-                    <div className="md:mr-24">
+                    <div className="md:mr-0 xl:mr-24 2xl:px-48 xl:pt-5 xxs:pt-5 lg:px-28 md:pl-14">
                       <h1 className="lg:text-4xl md:text-2xl xxs:text-xl pb-5">Grow Your <br/> <span className="leading-normal"> Online Business With Us</span> <br/> <span> & Make Success.</span></h1>
                       <p className="lg:text-[18px] md:text-[15px] xxs:text-[13px] leading-[27px] ">As a business owner, we let you take control. Simply log in to your business centre to update or personalise your listing, receive customer enquiries and respond to reviews anytime, anywhere.</p>
                       <div className="my-5 text-[16px] text-white leading-5">
@@ -52,15 +51,12 @@ const Index = () => {
                       </div>
                     </div> 
                     <div>
-                        <Image src="/images/advertise/Vector.png" height={800} width={800} alt="ipad-image" className="xxs:ml-1 text-center"/>
+                        <Image src="/images/advertise/Vector.png" height={1000} width={1000} alt="ipad-image" className="xxs:ml-1 text-center"/>
                     </div>
                   </div>
                 </SwiperSlide>
               </Swiper>
             </div>
-            <SocialIcon />
-            <ServiceCards />
-          </Layout>
         </div>
       );
 }
