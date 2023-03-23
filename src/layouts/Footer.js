@@ -1,6 +1,5 @@
-import React,{useEffect} from 'react'
+import React from 'react';
 import Link from 'next/link'
-import Image from 'next/image'
 import { MdKeyboardArrowRight } from "react-icons/md"
 import { FOOTER_CATEGORIES, FOOTER_OUR_DIRECTORY, FOOTER_SECTION } from './../utility/footerInfo';
 import { FOOTER_RECENT_BLOGS } from './../utility/footerInfo';

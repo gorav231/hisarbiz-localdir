@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
 
-
-
 const UsecontrolPopWithEsc = (setRpop) => {
     const efunc = useCallback(e => {
         if(e.key === 'Escape'){

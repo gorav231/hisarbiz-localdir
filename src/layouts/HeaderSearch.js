@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/router";
 import { TfiInkPen } from "react-icons/tfi";
 import useControlPopOutside from "../hooks/useControlPopOutside";
