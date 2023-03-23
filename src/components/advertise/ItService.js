@@ -4,7 +4,7 @@ import Image from 'next/image';
 const ItService = () => {
   return (
     <div>
-        <div className='grid grid-cols-3 gap-4 xl:w-5/6 lg:w-[96%] md:5/6  md:text-center xxs:text-center md:px-7 xxs:w-full xxs:px-2 mx-auto md:pt-20 md:pb-10'>
+        <div className='grid grid-cols-3 gap-4 xl:w-5/6 lg:w-[96%] md:5/6  md:text-center xxs:text-center md:px-7 xxs:w-full xxs:px-2 mx-auto md:pt-10 md:pb-10'>
             <div className='lg:col-span-1 md:col-span-3 xxs:col-span-3'>
                 <div>
                     <h1 className='text-2xl text-black1-1 pb-3'>Web Design and Development</h1>

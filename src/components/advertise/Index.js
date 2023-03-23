@@ -51,7 +51,7 @@ const Index = () => {
                       </div>
                     </div> 
                     <div>
-                        <Image src="/images/advertise/Vector.png" height={1000} width={1000} alt="ipad-image" className="xxs:ml-1 text-center"/>
+                        <Image src="/images/advertise/vector.png" height={1000} width={1000} alt="ipad-image" className="xxs:ml-1 text-center"/>
                     </div>
                   </div>
                 </SwiperSlide>

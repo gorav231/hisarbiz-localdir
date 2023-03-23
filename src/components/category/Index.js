@@ -24,7 +24,6 @@ const Index = () => {
   const records = BUSINESS_CATEGORY_CARD.slice(firstIndex, lastIndex);
   const nPages = Math.ceil(BUSINESS_CATEGORY_CARD.length / recordsPerPage);
   const numbers = [...Array(nPages + 1).keys()].slice(1);
-  console.log("numbers+++++++++++",numbers)
 
   const prePage = () =>{
     if(currentPage !== 1){

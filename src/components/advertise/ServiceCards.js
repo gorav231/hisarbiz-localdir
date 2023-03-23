@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import SwiperCore, { Keyboard, Pagination, Navigation, A11y } from 'swiper';
 import 'swiper/swiper-bundle.css';
-SwiperCore.use([Navigation, Pagination, A11y]);
+SwiperCore.use([Navigation, Pagination, A11y, Navigation]);
 import { SERVICE_CARD_INFO } from "@/src/utility/serviceCardInfo";
 
 const ServiceCards = () => {
@@ -46,12 +46,15 @@ const ServiceCards = () => {
           keyboard={{
             enabled: true,
           }}
-          
           pagination={{
             clickable: true,
           }}
+          autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+          }}
           breakpoints={sliderSettings}
-          modules={[Keyboard, Pagination]}
+          modules={[Keyboard, Pagination, Navigation]}
           className="my-5"
           
         >
@@ -60,7 +63,7 @@ const ServiceCards = () => {
                 const {id, img, heading, para} = data;
               return (
                 <SwiperSlide>
-                  <div key={id} className="text-center flex flex-col justify-center items-center bg-[#d0d3cf] rounded-md py-6 md:px-3 xxs:px-3">
+                  <div key={id} className="text-center flex flex-col justify-center items-center bg-[#d0d3cf] rounded-md py-6 mb-14 md:px-3 xxs:px-3">
                     <div className="bg-[#3596DA] rounded-md p-3 w-10 mb-4">
                       <Image
                         src={img}
