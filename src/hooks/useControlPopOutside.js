@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const useControlPopOutside = (setRpop, popupRef) => {
+const UseControlPopOutside = (setRpop, popupRef) => {
     let handler = (e) => {
         if (!popupRef.current?.contains(e.target)) {
           setRpop(false);
@@ -18,4 +18,4 @@ return handler;
   
 };
 
-export default useControlPopOutside;
+export default UseControlPopOutside;

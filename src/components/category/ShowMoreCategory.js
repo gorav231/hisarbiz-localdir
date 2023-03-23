@@ -27,4 +27,4 @@ const ShowMoreCategory = ({pop}) => {
   )
 }
 
-export default ShowMoreCategory
+export default ShowMoreCategory;

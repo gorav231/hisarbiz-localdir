@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
     {loader && <PreLoader />}
     <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
-  </QueryClientProvider>
+     </QueryClientProvider>
   </>
   )
 }

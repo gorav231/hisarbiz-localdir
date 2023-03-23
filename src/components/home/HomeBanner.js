@@ -6,7 +6,7 @@ import Link from "next/link";
 import { RiSearchLine } from "react-icons/ri";
 
 import { TfiInkPen } from "react-icons/tfi";
-import useControlPopOutside from "@/src/hooks/useControlPopOutside";
+import UseControlPopOutside from "@/src/hooks/UseControlPopOutside";
 import SuggetionNameCategory from "@/src/shared/SuggetionNameCategory";
 import { supabase } from "@/supabase";
 /**
@@ -119,7 +119,7 @@ const HomeBanner = () => {
     setSearchByLocation("");
   };
   
-  useControlPopOutside(setIsVisible, addressref);
+  UseControlPopOutside(setIsVisible, addressref);
   return (
         <div className="grid grid-cols-6">
           <div className="col-span-6 relative -z-10 -top-10">
