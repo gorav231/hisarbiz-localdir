@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
-const UseControlPopOutside = (setRpop, popupRef) => {
+
+
+const useControlPopOutside = (setRpop, popupRef) => {
     let handler = (e) => {
         if (!popupRef.current?.contains(e.target)) {
           setRpop(false);
@@ -12,10 +14,10 @@ const UseControlPopOutside = (setRpop, popupRef) => {
         return () => {
           document.removeEventListener("mousedown", handler);
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+
       }, []);
 return handler;
   
 };
 
-export default UseControlPopOutside;
+export default useControlPopOutside;

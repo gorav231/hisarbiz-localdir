@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Link from "next/link";
 import { RxTextAlignJustify, RxPerson } from "react-icons/rx";
 import { GoPlus } from "react-icons/go";
 import { AiOutlineClose } from "react-icons/ai";
 import Image from "next/image";
 import HeaderSearch from "./HeaderSearch";
+import { AuthContext } from "../Context/UserContext";
 import { useRef } from "react";
 import { HiOutlineLocationMarker } from "react-icons/hi";
+import { FaPowerOff, FaUsersCog, FaUserAlt } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -59,6 +63,42 @@ const Header = () => {
     if (e.keyCode === 27) {
       setOpen(false);
     }
+  };
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          position: "top-end",
+          timerProgressBar: true,
+          title: "Successfully Logout Done !",
+          iconColor: "#0077b6",
+          toast: true,
+          icon: "success",
+          showClass: {
+            popup: "animate__animated animate__fadeInRight",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutRight",
+          },
+          customClass: {
+            confirmButton: "blue",
+          },
+          showConfirmButton: false,
+          timer: 3500,
+        });
+        localStorage.removeItem("user-uid");
+        Router.push("/");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something warn!",
+          confirmButtonColor: "#0077b6",
+        });
+      });
   };
 
   const menuItems = (
@@ -122,12 +162,67 @@ const Header = () => {
                 <HeaderSearch />
               </li>
               <li>
+                {!user ? (
+                  <>
+                    <button
+                      className="bg-[#75E3F1] border border-gray-300 relative p-3 rounded-lg hidden lg:block"
+                      onClick={handleClick}
+                    >
+                      <RxPerson className="text-[#000] outline-none text-[20px]" />
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <button
+                      className="bg-[#75E3F1] relative border border-gray-300 h-12 w-12 text-sm font-bold text-[1.2rem] rounded-lg hidden lg:block"
+                      onClick={() => setdropdownOpen(!dropdownOpen)}
+                    >
+                      {user?.email[0].toUpperCase()}
+                    </button>
+                    <div
+
+                    ref={dropDownRef}
+                      className={`${dropdownOpen
+                        ? `top-20 opacity-100 visible`
+                        : "top-[90%] invisible opacity-0"
+                        } absolute xl:w-[20%] lg:w-[25%] xxs:w-[34%] lg:right-[-3.2%] md:right-[0%] z-40 -mt-2 px-1.5 rounded-lg border border-slate-300 bg-[#dde7ea] py-2 shadow-inner transition-all`}
+                    >
+                      <div className="rounded-lg px-3 border border-slate-300 shadow-inner bg-[#dde7ea]">
+                        <h1 className="font-bold my-2">{user?.email}</h1>
+                      </div>
+                      <hr />
+                      <Link
+                        href="/dashboard"
+                        className="flex gap-2 items-center my-2 rounded-lg px-3 py-2.5 shadow-inner text-sm border border-slate-300  bg-[#dde7ea]"
+                      >
+                        {" "}
+                        <FaUsersCog></FaUsersCog> Dashboard
+                      </Link>
+                      <Link
+                        href="/profile"
+                        className="flex gap-2 items-center my-2 rounded-lg px-3 py-2.5 shadow-inner text-sm border border-slate-300  bg-[#dde7ea]"
+                      >
+                        <FaUserAlt /> Go to profile
+                      </Link>
+
+                      <button
+                        onClick={handleLogout}
+                        className=" items-center rounded-lg mt-2 px-3 py-2.5 text-sm border shadow-inner border-slate-300  bg-[#dde7ea] flex flex-row w-full gap-2"
+                      >
+                        <FaPowerOff></FaPowerOff>
+                        Logout
+                      </button>
+                    </div>
+                  </>
+                )}
+              </li>
+              {/* <li>
                     <button
                       className="bg-[#75E3F1] border border-gray-300 relative p-3 rounded-lg hidden lg:block"
                       onClick={handleClick}>
                       <RxPerson className="text-[#000] outline-none text-[20px]" />
                     </button>
-              </li>
+              </li> */}
               <li>
                 <Link href="/add-listing"
                   className="lg:flex  items-center justify-center h-12 px-6 font-medium common_btn hidden">
@@ -162,12 +257,32 @@ const Header = () => {
                   <nav>
                     <ul className="space-y-4 ml-5 sm:ml-5 xxs:ml-10 md:ml-5">
                       {menuItems}
-                        <li>
+                      <li>
+                        {!user ? (
+                          <>
+                            <Link
+                              href="/userLogin"
+                              aria-label="Log in"
+                              title="Log in"
+                              className="font-medium tracking-wide  transition-colors duration-200 hover:text-[#29B5DA]"
+                            >
+                              Log in
+                            </Link>
+                          </>
+                        ) : (
+                          <>
+                            <h1 onClick={handleLogout} className="font-medium">
+                              Logout
+                            </h1>
+                          </>
+                        )}
+                      </li>
+                        {/* <li>
                             <Link href="/userLogin" aria-label="Log in" title="Log in"
                               className="font-medium tracking-wide  transition-colors duration-200 hover:text-[#29B5DA]">
                               Log in
                             </Link>
-                      </li>
+                      </li> */}
                       <li className="">
                         <Link href="/add-listing"
                           className="lg:hidden flex  items-center justify-center h-12 px-6 font-medium common_btn">
