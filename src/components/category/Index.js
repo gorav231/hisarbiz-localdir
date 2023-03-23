@@ -80,7 +80,7 @@ const Index = () => {
             return (
               <div key={id} className="shadow-lg mt-2 md:mx-0 xxs:mx-2 md:p-2 xxs:p-4 rounded-md border bg-[#f7f7f7] border-slate-400">
                   <div className="">
-                    <Image src={img} height={100} width={100} className="w-full h-40 rounded-md" />
+                    <Image src={img} height={100} width={100} alt="business-category-cards" className="w-full h-40 rounded-md" />
                   </div>
                   <div>
                     <h1 className="text-black1-1 pt-5 cursor-pointer hover:text-lightblue-10">{heading}</h1>
@@ -123,7 +123,7 @@ const Index = () => {
               <div key={id} className="shadow-lg mt-2 xxs:mx-2 mb-8 xl:p-8 lg:p-2 md:p-8 xxs:p-4 rounded-md border-t-2 bg-[#f7f7f7] border-[#f7f7f7]">
                 <div className="block mb-30 wow fadeInUp">
                   <div className="">
-                    <Image src={img} height={100} width={100} />
+                    <Image src={img} height={100} width={100} alt="sponsered-business" />
                   </div>
                   <div className="info">
                     <h5 className="text-lg pt-2 pb-2">{heading}</h5>

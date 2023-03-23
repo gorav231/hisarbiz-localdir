@@ -33,7 +33,6 @@ const SuggetionNameCategory = ({
                 setSData([]);
                 setIsVisible(false);
                 setSQuery(val);
-               
               }}
             >
               {val}
