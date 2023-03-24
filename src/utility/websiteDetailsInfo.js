@@ -24,7 +24,7 @@ export const WEBSITE_DETAILS_INFO = [
     {
         id:3,
         img:"/images/advertise/website-2.webp",
-        heading:"Over 4 million direct calls tracked each year.1",
+        heading:"Over thousands direct calls tracked each year.1",
         para1:"We know how important it is to have your phones ringing.",
         para2:"Trusted by Google ",
         para3:"Supporting 'near me' Google searches"

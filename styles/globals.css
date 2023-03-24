@@ -54,3 +54,14 @@
   .shadow-card{
     box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.1);
   }
+  .swiper-pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #3596da !important;
+    height: 15px !important;
+    width: 15px !important;
+}

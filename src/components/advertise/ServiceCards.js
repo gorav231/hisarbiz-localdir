@@ -1,12 +1,24 @@
-import React from "react";
+import React,{ useRef,useCallback } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import SwiperCore, { Keyboard, Pagination, Navigation, A11y } from 'swiper';
 import 'swiper/swiper-bundle.css';
 SwiperCore.use([Navigation, Pagination, A11y, Navigation]);
 import { SERVICE_CARD_INFO } from "@/src/utility/serviceCardInfo";
+import { TbArrowBigLeft,TbArrowBigRight } from "react-icons/tb"
 
 const ServiceCards = () => {
+  const sliderRef = useRef(null);
+
+  const handlePrev = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slidePrev();
+  }, []);
+
+  const handleNext = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slideNext();
+  }, []);
     const sliderSettings = {
         260: {
           slidesPerView: 1,
@@ -35,11 +47,11 @@ const ServiceCards = () => {
       };
   return (
     <div>
-      <div className="lg:w-5/6 md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto pt-14 pb-5">
+      <div className="xl:w-5/6 lg:w-[88%] md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto pt-14 pb-5 relative">
         <h1 className="text-center md:text-4xl xxs:text-2xl py-1">We Provide The Best Service </h1>
         <h1 className="text-center md:text-4xl xxs:text-2xl py-1">With Our Tools </h1>
         <p className="text-center text-[16px] font-[400] pt-5">OUR SERVICES</p>
-        <Swiper
+        <Swiper ref={sliderRef}
           slidesPerView={4}
           spaceBetween={30}
           keyboard={{
@@ -48,6 +60,7 @@ const ServiceCards = () => {
           pagination={{
             clickable: true,
           }}
+         
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
@@ -62,7 +75,7 @@ const ServiceCards = () => {
                 const {id, img, heading, para} = data;
               return (
                 <SwiperSlide key={id}>
-                  <div className="text-center flex flex-col justify-center items-center bg-[#d0d3cf] rounded-md py-6 mb-14 md:px-3 xxs:px-3">
+                  <div className="text-center flex flex-col justify-center items-center bg-[#f6f7fb] rounded-md py-6 mb-14 md:px-3 xxs:px-3">
                     <div className="bg-[#3596DA] rounded-md p-3 w-10 mb-4">
                       <Image
                         src={img}
@@ -76,10 +89,15 @@ const ServiceCards = () => {
                     <p className="text-[16px] leading-6 pb-5">{para}</p>
                   </div>
                 </SwiperSlide>
+                
               );
             })}
           </div>
         </Swiper>
+        <div className="flex justify-between items-center lg:block md:hidden xxs:hidden">
+          <button className="prev-arrow cursor-pointer absolute -left-10 top-[57%] bg-lightblue-10 p-3 rounded-full" onClick={handlePrev} ><TbArrowBigLeft className="h-6 w-6 text-white" /></button>
+          <button className="next-arrow cursor-pointer absolute -right-10 top-[57%] bg-lightblue-10 p-3 rounded-full" onClick={handleNext} ><TbArrowBigRight className="h-6 w-6 text-white"/></button>
+        </div>
       </div>
     </div>
   );
