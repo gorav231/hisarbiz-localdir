@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
     <Script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzLxooRzXh1axdLrfQLUFHHQ98gQz3zS0&libraries=places"
         strategy="beforeInteractive"
-      />
+      ></Script>
     {loader && <PreLoader />}
     <QueryClientProvider client={queryClient}>
       <DataContext>

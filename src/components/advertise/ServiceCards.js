@@ -40,7 +40,6 @@ const ServiceCards = () => {
         <h1 className="text-center md:text-4xl xxs:text-2xl py-1">With Our Tools </h1>
         <p className="text-center text-[16px] font-[400] pt-5">OUR SERVICES</p>
         <Swiper
-        
           slidesPerView={4}
           spaceBetween={30}
           keyboard={{
@@ -62,8 +61,8 @@ const ServiceCards = () => {
             {SERVICE_CARD_INFO.map((data) => {
                 const {id, img, heading, para} = data;
               return (
-                <SwiperSlide>
-                  <div key={id} className="text-center flex flex-col justify-center items-center bg-[#d0d3cf] rounded-md py-6 mb-14 md:px-3 xxs:px-3">
+                <SwiperSlide key={id}>
+                  <div className="text-center flex flex-col justify-center items-center bg-[#d0d3cf] rounded-md py-6 mb-14 md:px-3 xxs:px-3">
                     <div className="bg-[#3596DA] rounded-md p-3 w-10 mb-4">
                       <Image
                         src={img}

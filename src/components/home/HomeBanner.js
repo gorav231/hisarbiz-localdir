@@ -9,6 +9,7 @@ import { TfiInkPen } from "react-icons/tfi";
 import UseControlPopOutside from "@/src/hooks/UseControlPopOutside";
 import SuggetionNameCategory from "@/src/shared/SuggetionNameCategory";
 import { supabase } from "@/supabase";
+import UsecontrolPopWithEsc from "@/src/hooks/useControlPopWithEsc";
 /**
  * File: src/components/home/HomeBanner.js
  * Description: home banner section.
@@ -67,6 +68,7 @@ const HomeBanner = () => {
       } catch (error) {
         console.log(error);
       }
+       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   
     const categoryBy = searchData?.filter((n) =>
@@ -120,6 +122,7 @@ const HomeBanner = () => {
   };
   
   UseControlPopOutside(setIsVisible, addressref);
+  UsecontrolPopWithEsc(setIsVisible)
   return (
         <div className="grid grid-cols-6">
           <div className="col-span-6 relative -z-10 -top-10">

@@ -30,6 +30,7 @@ const DataContext = ({ children }) => {
         console.log(error);
       }
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -52,6 +53,7 @@ const DataContext = ({ children }) => {
     } catch (error) {
       console.log(error);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const categoryBy = searchData?.filter((n) =>

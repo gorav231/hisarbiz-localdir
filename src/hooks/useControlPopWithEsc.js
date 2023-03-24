@@ -1,21 +1,21 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {useEffect } from 'react';
 
 
 
 const UsecontrolPopWithEsc = (setRpop) => {
-    const efunc = useCallback(e => {
-        if(e.key === 'Escape'){
-            setRpop(false)
-        }
-      })
-
+    const close = (e) => {
+      if (e.keyCode === 27) {
+        setRpop(false);
+      }
+    };
       useEffect(()=> {
-        document.addEventListener('keydown', efunc);
+        
         return () => {
-            document.removeEventListener("keydown", efunc);
+          window.addEventListener("keydown", close);
           };
-      }, [efunc])
-return efunc;
+          // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [])
+return close;
   
 };
 

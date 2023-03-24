@@ -14,7 +14,7 @@ const useControlPopOutside = (setRpop, popupRef) => {
         return () => {
           document.removeEventListener("mousedown", handler);
         };
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
 return handler;
   
