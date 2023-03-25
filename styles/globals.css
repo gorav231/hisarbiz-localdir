@@ -58,7 +58,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
   }
   .swiper-pagination-bullet-active {
     background-color: #3596da !important;
