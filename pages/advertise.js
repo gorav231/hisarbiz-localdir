@@ -7,6 +7,7 @@ import ItService from "@/src/components/advertise/ItService";
 import WebsiteDetails from "@/src/components/advertise/WebsiteDetails";
 import SearchAndSocial from "@/src/components/advertise/SearchAndSocial";
 import ExpertIndustry from "@/src/components/advertise/ExpertIndustry";
+import BusinessPlans from "@/src/components/advertise/BusinessPlans";
 
 const Advertise = () => {
   return (
@@ -17,6 +18,7 @@ const Advertise = () => {
       <SearchAndSocial />
       <ItService />
       <WebsiteDetails />
+      <BusinessPlans />
       <ExpertIndustry />
     </Layout>
   );

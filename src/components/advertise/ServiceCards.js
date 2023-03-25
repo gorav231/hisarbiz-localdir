@@ -47,10 +47,10 @@ const ServiceCards = () => {
       };
   return (
     <div>
-      <div className="xl:w-5/6 lg:w-[88%] md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto pt-14 pb-5 relative">
+      <div className="xl:w-5/6 lg:w-[88%] md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto md:pt-28 xxs:pt-20 xxs:mb-10 md:mb-0 pb-5 relative">
         <h1 className="text-center md:text-4xl xxs:text-2xl py-1">We Provide The Best Service </h1>
         <h1 className="text-center md:text-4xl xxs:text-2xl py-1">With Our Tools </h1>
-        <p className="text-center text-[16px] font-[400] pt-5">OUR SERVICES</p>
+        <p className="text-center text-[16px] font-[400] pt-2 pb-7">OUR SERVICES</p>
         <Swiper ref={sliderRef}
           slidesPerView={4}
           spaceBetween={30}
@@ -60,7 +60,7 @@ const ServiceCards = () => {
           pagination={{
             clickable: true,
           }}
-         
+         loop={true}
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
@@ -75,8 +75,8 @@ const ServiceCards = () => {
                 const {id, img, heading, para} = data;
               return (
                 <SwiperSlide key={id}>
-                  <div className="text-center flex flex-col justify-center items-center bg-[#f6f7fb] rounded-md py-6 mb-14 md:px-3 xxs:px-3">
-                    <div className="bg-[#3596DA] rounded-md p-3 w-10 mb-4">
+                  <div className="text-center flex flex-col justify-center items-center bg-[#f6f7fb] h-64 overflow-hidden rounded-md mb-14 md:px-3 xxs:px-3">
+                    <div className="bg-[#3596DA] rounded-md mt-5 p-3 w-10 mb-4">
                       <Image
                         src={img}
                         alt="service-card"
@@ -86,7 +86,7 @@ const ServiceCards = () => {
                       />
                     </div>
                     <h1 className="text-xl pb-5">{heading}</h1>
-                    <p className="text-[16px] leading-6 pb-5">{para}</p>
+                    <p className="para leading-6 pb-5">{para}</p>
                   </div>
                 </SwiperSlide>
                 
@@ -95,8 +95,8 @@ const ServiceCards = () => {
           </div>
         </Swiper>
         <div className="flex justify-between items-center lg:block md:hidden xxs:hidden">
-          <button className="prev-arrow cursor-pointer absolute -left-10 top-[57%] bg-lightblue-10 p-3 rounded-full" onClick={handlePrev} ><TbArrowBigLeft className="h-6 w-6 text-white" /></button>
-          <button className="next-arrow cursor-pointer absolute -right-10 top-[57%] bg-lightblue-10 p-3 rounded-full" onClick={handleNext} ><TbArrowBigRight className="h-6 w-6 text-white"/></button>
+          <button className="prev-arrow cursor-pointer absolute -left-10 top-[60%] bg-lightblue-10 p-3 rounded-full" onClick={handlePrev} ><TbArrowBigLeft className="h-6 w-6 text-white" /></button>
+          <button className="next-arrow cursor-pointer absolute -right-10 top-[60%] bg-lightblue-10 p-3 rounded-full" onClick={handleNext} ><TbArrowBigRight className="h-6 w-6 text-white"/></button>
         </div>
       </div>
     </div>
