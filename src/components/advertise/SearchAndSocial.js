@@ -5,7 +5,7 @@ import { SEARCH_SOCIAL_INFO } from "@/src/utility/searchSocialInfo";
 const SearchAndSocial = () => {
   return (
     <div className="bg-[#ebeaeb]">
-      <div className="grid grid-cols-12 gap-4 2xl:w-5/6 xl:w-[100%] lg:w-[100%] md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto md:mt-24 xxs:mt-2 md:mb-16 xxs:mb-20 pt-14 md:pb-14 xxs:pb-5">
+      <div className="grid grid-cols-12 gap-4 2xl:w-5/6 xl:w-[100%] lg:w-[100%] md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto md:mt-20 xxs:mt-2 md:mb-16 xxs:mb-20 pt-14 md:pb-14 xxs:pb-5">
         <div className="lg:col-span-5 md:col-span-12 xxs:col-span-12 xl:block lg:hidden md:hidden xxs:hidden">
           <Image
             src="/images/advertise/search-social.jpg"

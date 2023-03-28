@@ -125,7 +125,7 @@ const HomeBanner = () => {
   UsecontrolPopWithEsc(setIsVisible)
   return (
         <div className="grid grid-cols-6">
-          <div className="col-span-6 relative -z-10 -top-10">
+          <div className="col-span-6 relative -z-10 -top-10 after:content-[''] after:absolute after:h-full after:w-full after:bg-[rgb(0,0,0,0.3)] after:top-0">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111497.06572257436!2d75.6854991157293!3d29.156322701334577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391232d8011d0c37%3A0x1d3f0df105af1178!2sHisar%2C%20Haryana!5e0!3m2!1sen!2sin!4v1678954693348!5m2!1sen!2sin"
             referrerPolicy="no-referrer-when-downgrade"
@@ -136,7 +136,7 @@ const HomeBanner = () => {
             loading="lazy"
           ></iframe>
           </div>
-          <div className="2xl:w-2/6 xl:w-[42%] lg:w-4/6 mx-4 my-4  bg-[rgb(0,0,0,0.7)] rounded-md absolute">
+          <div className="2xl:w-2/6 xl:w-[42%] lg:w-4/6 mx-4 my-4 2xl:left-32 md:left-5  bg-[rgb(0,0,0,0.7)] rounded-md absolute">
           <div className="xxs:mx-1 md:pt-8 xxs:pt-2 md:m-2 rounded-md pt-2 pb-7">
            
             <div className="flex md:flex-row justify-between xxs:flex-row items-center">

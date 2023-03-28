@@ -74,7 +74,7 @@ export const SERVICE_CARD_INFO = [
     {
         id:12,
         img:"/images/advertise/service-1.png",
-        heading:"Dedicated Graphic Design Services",
-        para:"Strong graphic elements on a page can be useful in directing viewers' attention and providing structure for the page. It communicates the brand value as well to the target audience.",
+        heading:"Dedicated Graphic Design",
+        para:"Strong graphic elements can be useful in directing viewers' attention and providing structure for the page. It communicates the brand value as well to the target audience.",
     }
 ];

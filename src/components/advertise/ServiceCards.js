@@ -8,8 +8,7 @@ import { SERVICE_CARD_INFO } from "@/src/utility/serviceCardInfo";
 import { TbArrowBigLeft,TbArrowBigRight } from "react-icons/tb"
 
 const ServiceCards = () => {
-  const sliderRef = useRef(null);
-
+  const sliderRef = useRef(null)
   const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slidePrev();
@@ -43,22 +42,24 @@ const ServiceCards = () => {
         1200: {
           slidesPerView: 4,
           spaceBetween: 30,
-        },
+        },  
+        1400: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },  
       };
+      
   return (
     <div>
       <div className="xl:w-5/6 lg:w-[88%] md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto md:pt-28 xxs:pt-20 xxs:mb-10 md:mb-0 pb-5 relative">
         <h1 className="text-center md:text-4xl xxs:text-2xl py-1">We Provide The Best Service </h1>
         <h1 className="text-center md:text-4xl xxs:text-2xl py-1">With Our Tools </h1>
         <p className="text-center text-[16px] font-[400] pt-2 pb-7">OUR SERVICES</p>
-        <Swiper ref={sliderRef}
+        <Swiper 
           slidesPerView={4}
           spaceBetween={30}
           keyboard={{
             enabled: true,
-          }}
-          pagination={{
-            clickable: true,
           }}
          loop={true}
           autoplay={{

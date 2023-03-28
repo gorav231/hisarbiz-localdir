@@ -139,7 +139,7 @@ const Header = () => {
   return (
     <div
       className={ scrolled ? "sticky top-0 z-10 transition delay-1000 duration-300 ease-in" : "navbar"} >
-      <div className="bg-[#F7F7F7] xl:px-3 lg:px-1.5 md:px-3 xl:mx-4 lg:mx-2 xxs:mx-0 xxs:p-0 md:block xxs:hidden">
+      <div className="bg-[#C4F3F9] xl:px-3 lg:px-1.5 md:px-3 xl:mx-4 lg:mx-2 xxs:mx-0 xxs:p-0 md:block xxs:hidden">
         {/* //** ----------- menu Items for large device----------- */}
 
         <div className="xl:w-[95%] lg:w-[100%] md:w-[95%] sm:w-[75%] xs:w-[80%] xxs:w-[90%] py-1 mx-auto z-10">
@@ -158,7 +158,7 @@ const Header = () => {
             <li className="flex items-center">
               <HiOutlineLocationMarker className="h-5 w-5 mr-1"/>Hisar
             </li>
-              <li className="py-[10px] lg:w-[255px] xxs:w-[260px] outline-0 rounded-lg border-none hidden lg:block">
+              <li className="py-[10px] xl:w-[300px] lg:w-[250px] md:w-[250px] xxs:w-[260px] outline-0 rounded-lg border-none hidden lg:block">
                 <HeaderSearch />
               </li>
               <li>

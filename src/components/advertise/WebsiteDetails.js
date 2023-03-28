@@ -9,9 +9,9 @@ const WebsiteDetails = () => {
       <div className="grid lg:grid-cols-3 md:grid-cols-2 xxs:grid-cols-1 gap-6 lg:w-5/6 md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto lg:border-t-2 lg:border-slate-500 text-center md:mb-20 xxs:mb-20 lg:mt-10 md:pt-0 xxs:pt-5">
         {WEBSITE_DETAILS_INFO.map((data,id) => {
           return (
-            <div className="2xl:-mt-[14%] xl:-mt-[18%] lg:-mt-[25%] xxs:-mt-0 md:mb-20 xxs:mb-4" key={id}>
-              <div className="flex justify-center border-2 border-slate-600 rounded-full w-32 bg-white items-center mx-auto mb-4">
-                <Image src={data.img} alt="website-details" height={200} width={200} className="p-3" />
+            <div className="2xl:-mt-[8%] xl:-mt-[12%] lg:-mt-[14%] xxs:-mt-0 md:mb-20 xxs:mb-4" key={id}>
+              <div className="flex justify-center border rounded-full w-32 h-20 bg-lightb-1 items-center mx-auto mb-4">
+                <Image src={data.img} alt="website-details" height={200} width={100} className="rounded-full" />
               </div>
               <h1 className="text-lg">{data.heading}</h1>
               <p className="leading-6 text-sm text-black1-1 pb-6">{data.para1}</p>

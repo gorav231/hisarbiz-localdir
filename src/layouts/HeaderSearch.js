@@ -212,7 +212,7 @@ const HeaderSearch = ({ logo }) => {
                         </div>
                       )}
                     </div>
-                    <span className="text-[20px] w-1/12 absolute text-gray-400 top-[15px] inset-y-0 right-5  flex">
+                    <span className="text-[20px] w-1/12 absolute text-gray-400 top-[15px] inset-y-0 right-7  flex">
                       <TfiInkPen />
                     </span>
                   </div>
