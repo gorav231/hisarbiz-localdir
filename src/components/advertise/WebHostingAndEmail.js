@@ -4,7 +4,7 @@ import { WEB_AND_EMAIL } from "@/src/utility/web&Email";
 
 const WebHostingAndEmail = () => {
   return (
-    <div className='bg-[url("/images/advertise/web-&-email.jpeg")] py-20 md:mb-32 xxs:mb-20 relative'>
+    <div className='bg-[url("/images/advertise/web-&-email.jpeg")] py-20 md:mb-20 xxs:mb-20 relative'>
       <div className="grid grid-cols-2 gap-8 xl:w-5/6 lg::w-[100%] md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto">
         {
            WEB_AND_EMAIL.map((data)=>{

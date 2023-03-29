@@ -41,17 +41,7 @@ module.exports = {
         'xs': '540px'
       },
       backgroundImage: {
-        // 'articalHero': 'url("/images/bg/blog-bg-1.jpg")',
-        // 'userBanner': 'url("/images/user-profile/user.svg")',
         'homeBanner': 'url("/images/home/homebanner.svg")',
-        // 'contactBanner': 'url("/images/contact/slide-banner.png")',
-        // 'reviewBanner': 'url("/images/review/review-banner.svg")',
-        // 'chooseBanner': 'url("/images/review/choose-banner.svg")',
-        // 'homeHeroBanner1': 'url("/images/hero/hero-one-bg-2.svg")',
-        // 'getQuotes': 'url("/images/getquote/get-quote-1.png")',
-        // 'mobileBanner': 'url("/images/getquote/get-quotes-bg.jpg")',
-        // 'privacyBanner': 'url("/images/term&condition/policy.svg")',
-        // 'freeBanner': 'url("/images/hero/34.png)'
       },
       fontFamily: {
         'Quicksand': ['sans-serif', 'Quicksand'],

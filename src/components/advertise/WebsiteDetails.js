@@ -6,7 +6,7 @@ import { WEBSITE_DETAILS_INFO } from "@/src/utility/websiteDetailsInfo";
 const WebsiteDetails = () => {
   return (
     <div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 xxs:grid-cols-1 gap-6 lg:w-5/6 md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto lg:border-t-2 lg:border-slate-500 text-center md:mb-20 xxs:mb-20 lg:mt-10 md:pt-0 xxs:pt-5">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 xxs:grid-cols-1 gap-6 lg:w-5/6 md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto lg:border-t-2 lg:border-slate-500 text-center md:mb-5 xxs:mb-20 lg:mt-10 md:pt-0 xxs:pt-5">
         {WEBSITE_DETAILS_INFO.map((data,id) => {
           return (
             <div className="2xl:-mt-[8%] xl:-mt-[12%] lg:-mt-[14%] xxs:-mt-0 md:mb-20 xxs:mb-4" key={id}>

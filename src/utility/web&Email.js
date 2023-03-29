@@ -8,7 +8,7 @@ export const WEB_AND_EMAIL = [
     {
         id:1,
         img:"/images/advertise/web.jpeg",
-        head:"How to make the most of your Directory listing.",
+        head:"Reliable Web Hosting Solutions For Your Needs",
         heading:"Web Hosting",
         para:"Choose to lay a robust foundation for your website with our fast, secure and scalable web and email hosting services. We love to cater our clients, bearing full responsibility for their digital growth and aim to serve nothing less than a premium experience.",
         button:"Read More"
@@ -16,7 +16,7 @@ export const WEB_AND_EMAIL = [
     {
         id:2,
         img:"/images/advertise/email.jpg",
-        head:"How to make the most of your Directory listing.",
+        head:"Customized Email Hosting services for all kind of Business",
         heading:"Email Hosting",
         para:"Choose to lay a robust foundation for your website with our fast, secure and scalable web and email hosting services. We love to cater our clients, bearing full responsibility for their digital growth and aim to serve nothing less than a premium experience.",
         button:"Read More"

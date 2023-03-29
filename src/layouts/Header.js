@@ -142,8 +142,8 @@ const Header = () => {
       <div className="bg-[#C4F3F9] xl:px-3 lg:px-1.5 md:px-3 xl:mx-4 lg:mx-2 xxs:mx-0 xxs:p-0 md:block xxs:hidden">
         {/* //** ----------- menu Items for large device----------- */}
 
-        <div className="xl:w-[95%] lg:w-[100%] md:w-[95%] sm:w-[75%] xs:w-[80%] xxs:w-[90%] py-1 mx-auto z-10">
-          <div className="relative flex items-center justify-between ">
+        <div className="xl:w-[95%] lg:w-[100%] md:w-[95%] sm:w-[75%] xs:w-[80%] xxs:w-[90%] py-1 mx-auto z-10 relative">
+          <div className="flex items-center justify-between ">
             <div className="flex items-center justify-between">
               <Link href="/" aria-label="Company" title="Company"
                className="inline-flex items-center"

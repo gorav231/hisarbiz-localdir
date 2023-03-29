@@ -9,7 +9,7 @@ import SearchAndSocial from "@/src/components/advertise/SearchAndSocial";
 import ExpertIndustry from "@/src/components/advertise/ExpertIndustry";
 import BusinessPlans from "@/src/components/advertise/BusinessPlans";
 import WebHostingAndEmail from "@/src/components/advertise/WebHostingAndEmail";
-import DigitalMarketingCards from "@/src/components/advertise/DigitalMarketingCards";
+import DigitalMarketingCards from "@/src/components/advertise/digital-marketing/DigitalMarketingCards";
 
 const Advertise = () => {
   return (

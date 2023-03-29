@@ -51,11 +51,11 @@ const ServiceCards = () => {
       
   return (
     <div>
-      <div className="xl:w-5/6 lg:w-[88%] md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto md:pt-28 xxs:pt-20 xxs:mb-10 md:mb-0 pb-5 relative">
-        <h1 className="text-center md:text-4xl xxs:text-2xl py-1">We Provide The Best Service </h1>
+      <div className="xl:w-5/6 lg:w-[88%] md:5/6 md:px-7 xxs:w-full xxs:px-2 mx-auto md:pt-20 xxs:pt-20 xxs:mb-10 md:mb-0 relative">
+        <h1 className="text-center md:text-4xl xxs:text-2xl pb-1">We Provide The Best Service </h1>
         <h1 className="text-center md:text-4xl xxs:text-2xl py-1">With Our Tools </h1>
         <p className="text-center text-[16px] font-[400] pt-2 pb-7">OUR SERVICES</p>
-        <Swiper 
+        <Swiper ref={sliderRef}
           slidesPerView={4}
           spaceBetween={30}
           keyboard={{
@@ -96,8 +96,8 @@ const ServiceCards = () => {
           </div>
         </Swiper>
         <div className="flex justify-between items-center lg:block md:hidden xxs:hidden">
-          <button className="prev-arrow cursor-pointer absolute -left-10 top-[60%] bg-lightblue-10 p-3 rounded-full" onClick={handlePrev} ><TbArrowBigLeft className="h-6 w-6 text-white" /></button>
-          <button className="next-arrow cursor-pointer absolute -right-10 top-[60%] bg-lightblue-10 p-3 rounded-full" onClick={handleNext} ><TbArrowBigRight className="h-6 w-6 text-white"/></button>
+          <button className="prev-arrow cursor-pointer absolute -left-10 top-[63%] bg-lightblue-10 p-3 rounded-full" onClick={handlePrev} ><TbArrowBigLeft className="h-6 w-6 text-white" /></button>
+          <button className="next-arrow cursor-pointer absolute -right-10 top-[63%] bg-lightblue-10 p-3 rounded-full" onClick={handleNext} ><TbArrowBigRight className="h-6 w-6 text-white"/></button>
         </div>
       </div>
     </div>
